@@ -1,5 +1,3 @@
-//KANTZARIS THEOFANIS
-//1117-2020-00062
 #include <stdio.h>
 #include <string.h>
 
@@ -7,11 +5,11 @@ int main()
 {
     char s[51],w[51];
     int n,a[51],i,j,k=0,l,found=0,t=0;
-    printf("Parakalw eisagete thn protash: ");
+    printf("Please enter the string: ");
     gets(s);
-    printf("Parakalw eisagete thn lejh pou thelete na brethei: ");
+    printf("Please enter the word that you want to find: ");
     gets(w);
-    for(i=0;s[i];i++) //diadikasia gia na broume poses forew brethike h lejh
+    for(i=0;s[i];i++) //Checking the frequency of the word
     {
     	if(s[i]==' ')
     	{
@@ -20,7 +18,7 @@ int main()
 	}
 	a[k++]=i;
 	j=0;
-	for(i=0;i<k;i++) //diadikasia gia na broume poses fores brethike h lejh
+	for(i=0;i<k;i++) 
 	{
 		n=a[i]-j;
 		if(n==strlen(w))
@@ -40,6 +38,6 @@ int main()
 		}
 		j=a[i]+1;
 	}
-	 printf("H lejh '%s' brethike %d fores",w,found);
+	 printf("The word %d finded %d times",w,found);
      return 0;
 }
