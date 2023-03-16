@@ -1,42 +1,40 @@
-//KANTZARIS THEOFANIS
-//1117-2020-00062
 #include <stdio.h>
 
-int isArraySorted(int [], int); //sinartisi gia na broume an einai tajinomimenos
+int isArraySorted(int [], int); //Function that checking if is sorted.
 
-int find_maximum(int[], int); //sinartisi gia na broume to megisto
+int find_maximum(int[], int); //Function that find the max element
 
 int main()
 {
     int size, array[100], c, r, location, maximum;
 
-    printf("Dwse ton arithmo ton stoixeiwn tou pinaka: ");
+    printf("Give the elements of the array: ");
     scanf("%d", &size);
 
-    printf("Dwse %d akeraious:\n", size);
+    printf("Give %d integers:\n", size);
 
-    for (c = 0; c < size; c++) //ekxorisi ton stoixeiwn
+    for (c = 0; c < size; c++) //Read the elements
     {
         scanf("%d", &array[c]);
     }
 
-    r = isArraySorted(array, size); //kaloume thn sinartisi gia tajinomisi
+    r = isArraySorted(array, size); //Call the function for the sorted
 
-    location = find_maximum(array, size); //kaloume thn sinartisi gia megisto stoixeio
-    maximum = array[location]; //thesh tou megistou stoixeiou
+    location = find_maximum(array, size); //Call the function for the max element
+    maximum = array[location]; //The position of the max element
 
     if (r == 1)
-        printf("O pinakas einai tajinomimenos kata aujousa.\n");
+        printf("The array is sorted by asceding.\n");
     else if (r == 2)
-        printf("O pinakas einai tajinomimenos kata fthinousa.\n");
+        printf("The array is sorted by discending.\n");
     else
-        printf("O pinakas den einai tajinomimenos.\n");
+        printf("The array is sorted.\n");
 
-    printf("To megisto stoixeio brethke sthn thesh = %d me timh = %d.\n", location + 1, maximum);
+    printf("The max element is %d and finded it in the position %d.\n", location + 1, maximum);
     return 0;
 }
 
-int isArraySorted(int array[], int size) //ektelesh sinartisis
+int isArraySorted(int array[], int size) //Function code
 {
     int a = 1, d = 1, c = 0;
 
@@ -57,7 +55,7 @@ int isArraySorted(int array[], int size) //ektelesh sinartisis
         return 0;
 }
 
-int find_maximum(int array[], int size) //ektelesh sinartisis
+int find_maximum(int array[], int size) //Function code
 {
     int c, index = 0;
 
